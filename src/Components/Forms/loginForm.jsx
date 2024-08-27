@@ -5,7 +5,7 @@ const LoginForm = () => {
     <>
    
     <form id="form">
-    
+    <img src="images/logo.png" alt="logo" className="img-fluid" />
   {/* <!-- Email input --> */}
   <div data-mdb-input-init className="form-outline mb-4">
   <label className="form-label" htmlFor="form1Example1">Email address</label>
