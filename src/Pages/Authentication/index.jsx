@@ -17,11 +17,16 @@ const Authentication = () => {
   const handleSubmit = async (e) => { 
     e.preventDefault()
     try{
-      const loginResponse = await login()
+      const loginResponse = await login(loginInfo)
+      
       if (loginResponse.status === 200) {
         setItem("token", loginResponse.data.token)
         navigate("/dashboard")
       }
+      // if (loginInfo.email === "admin" && loginInfo.password === "admin") {
+      //   setItem("token", "admin")
+      //   navigate("/dashboard")
+      // }
       
   }
     catch(e){

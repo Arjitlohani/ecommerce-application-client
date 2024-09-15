@@ -9,7 +9,7 @@ const LoginForm = ({loginInfo,setLoginInfo,handleSubmit}) => {
     <>
    
     <form id="form">
-    <img src="images/logo.png" alt="logo" className="img-fluid" />
+    <img src="images/logo1.png" alt="logo" className="img-fluid" />
   {/* <!-- Email input --> */}
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="htmlm-label">Email address</label><br></br>

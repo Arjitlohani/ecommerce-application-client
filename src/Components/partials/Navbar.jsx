@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <Link className="navbar-brand" to="/dashboard"> <img src="images/launani.svg" alt="logo" style={{width:"60%", height:"100%",marginLeft:"15px"}}/></Link>
+  <Link className="navbar-brand" to="/dashboard"><img src="images/navLogo.png" alt="logo" className="img-fluid" style={{width:"40%", height:"70%",marginLeft:"15px"}}/> </Link>
  
   
   <Link to="/dashboard" className="nav-link" >Dashboard</Link>
