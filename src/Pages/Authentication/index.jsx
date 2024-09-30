@@ -21,7 +21,10 @@ const Authentication = () => {
       
       if (loginResponse.status === 200) {
         setItem("token", loginResponse.data.token)
-        navigate("/dashboard")
+        if(loginResponse.data.role =="1"){
+          navigate("/dashboard")
+        }
+        navigate("/customer-dashboard")
       }
       // if (loginInfo.email === "admin" && loginInfo.password === "admin") {
       //   setItem("token", "admin")

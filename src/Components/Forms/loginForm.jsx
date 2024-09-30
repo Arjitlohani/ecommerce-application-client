@@ -1,3 +1,4 @@
+import Footer from "../partials/Footer"
 
 
 const LoginForm = ({loginInfo,setLoginInfo,handleSubmit}) => {
@@ -7,6 +8,10 @@ const LoginForm = ({loginInfo,setLoginInfo,handleSubmit}) => {
 }
   return (
     <>
+    <style>
+      
+    </style>
+    <div className="flex h-screen justify-center items-center">
    
     <form id="form">
     <img src="images/logo1.png" alt="logo" className="img-fluid" />
@@ -36,8 +41,9 @@ const LoginForm = ({loginInfo,setLoginInfo,handleSubmit}) => {
   {/* <!-- Submit button --> */}
   <button data-mdb-ripple-init type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Sign in</button>
 </form>
+</div>
 
-
+<Footer/>
     </>
   )
 }

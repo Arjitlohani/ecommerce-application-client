@@ -1,96 +1,69 @@
-import { Link } from "react-router-dom"
-import Navbar from "../../../Components/partials/Navbar"
-import FloatingCard from "../../../Components/common/floatingcard/FloatingCard"
-import './dashboard.css'
-
-
+import { useState } from "react";
+import Sidebar from "../../../Components/partials/SideBar";
+import Navbar from "../../../Components/partials/Navbar";
+import { Link } from "react-router-dom";
+import Footer from "../../../Components/partials/Footer";
+import ProductTable from "../../../Components/common/table/Tables";
 
 const Dashboard = () => {
-  const userCard=({
-    title:"Total -  User",
-    cardName:"Add User"
-  }
-  )
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
-const productCard=(  {
-  title:"Total -  Product",
-  cardName:"Add Product"
-})
-
-const categoryCard=(
-{
-  title:"Total - Category",
-  cardName:"Add Category"
-}
-)
-
-const handleAddUser=()=>{
-}
-
-const handleSideBar=(e)=>{}
-const  openNav =()=> {
-   document.getElementById("mySidebar").style.width = "250px";
-   document.getElementById("main").style.marginLeft = "250px";
- }
- 
- const closeNav=()=> {
-   document.getElementById("mySidebar").style.width = "0";
-   document.getElementById("main").style.marginLeft= "0";
- }
-
-
-
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
 
   return (
-    <div>
-          <Navbar/>
-          <div id="mySidebar" className="sidebar">
-  <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>×</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
+    <div className="dashboard-layout">
+      {isSidebarVisible && <Sidebar />}
+      <div className="main-content">
+        <Navbar toggleSidebar={toggleSidebar} />
+        <div className="content">
+          <div className="cards-container">
+            <div
+              className="card"
+              style={{ backgroundImage: "url('images/3333.png')" }}
+            >
+              <Link to={"/addproduct"}>
+                <h3>Product</h3>
+                <p className="hidden sm:block">Manage your products.</p>
+              </Link>
+            </div>
 
-<div id="main">
-  <button className="openbtn" onClick={openNav}>☰ Open Sidebar</button>  
-  
-  <div style={{display:"flex",margin:"5px"}} > 
-     <Link to={"/adduser"}>
-      <FloatingCard card ={userCard}/> 
+            <div
+              className="card"
+              style={{
+                backgroundImage: "url('images/111.png')",
+                backgroundSize: "cover",
+              }}
+            >
+              <Link to={"/adduser"}>
+                <h3>User</h3>
+                <p className="hidden sm:block text-red-600">
+                  Manage users and their roles.
+                </p>
+              </Link>
+            </div>
 
-      
-   
-
-         </Link>
-        <Link to={"/addproduct"}><FloatingCard card ={productCard}/>
-        
-
-       </Link>
-        <Link to={"/addcategory"}><FloatingCard card ={categoryCard}/>
-                
-        </Link>  
-
-
-        
-
-
-        
-
-
-
-        
-      
-      
+            <div
+              className="card"
+              style={{ backgroundImage: "url('images/122.png')" }}
+            >
+              <Link to={"/addorder"}>
+                <h3>Order</h3>
+                <p className="hidden sm:block text-amber-400">
+                  Track orders and payments.
+                </p>
+              </Link>
+            </div>
+          </div>
+          <h3 className="block sm:hidden text-amber-400">Users Information</h3>
+          <ProductTable />
+          <h1 className="text-red-500">hello world</h1>
+        </div>
+        <Footer />
       </div>
-</div>
+    </div>
+  );
+};
 
-
-
-      </div>
-   
-    
-  )
-}
-
-export default Dashboard
+export default Dashboard;
