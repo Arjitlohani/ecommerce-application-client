@@ -2,9 +2,9 @@
 import  { useState, useEffect } from 'react';
 
 const banners = [
-  { id: 1, image: 'https://via.placeholder.com/1500x400?text=Banner+1' },
-  { id: 2, image: 'https://via.placeholder.com/1500x400?text=Banner+2' },
-  { id: 3, image: 'https://via.placeholder.com/1500x400?text=Banner+3' },
+  { id: 1, image: 'images/customer/banner1.jpg' },
+  { id: 2, image: 'images/customer/banner2.jpg' },
+  { id: 3, image: 'images/customer/banner3.jpg' },
 ];
 
 const BannerSlider = () => {
@@ -26,13 +26,13 @@ const BannerSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-64">
+    <div className="relative w-full h-64 mb-2">
       {banners.map((banner, index) => (
-        <img
+        <img 
           key={banner.id}
           src={banner.image}
           alt={`Banner ${banner.id}`}
-          className={`absolute w-full h-64 object-cover transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute w-full h-[280px] object-cover transition-opacity duration-2000 ${index === current ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
 

@@ -6,6 +6,7 @@ import BannerSlider from '../../Components/Customer/BannerSlider';
 
 import Card from '../../Components/Customer/Card';
 import Footer from '../../Components/partials/Footer';
+import { product } from './services';
 
 
 
@@ -15,6 +16,10 @@ const CustomerDashboard = () => {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
+  const getDatata =()=>{
+    product();
+  }
 
   return (
     <div className="relative min-h-screen bg-gray-100">
@@ -26,10 +31,13 @@ const CustomerDashboard = () => {
 
       {/* Main Content */}
       <div className={`p-4 transition-all duration-300 ${sidebarOpen ? 'ml-64' : ''}`}>
-        <BannerSlider />
+        <BannerSlider  />
         
         {/* Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+        <div>
+          <button onClick={getDatata}>Get Data</button>
+        </div>
           <Card
             image="https://via.placeholder.com/150"
             productName="Product 1"
