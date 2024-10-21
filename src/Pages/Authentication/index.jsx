@@ -19,17 +19,18 @@ const Authentication = () => {
     try{
       const loginResponse = await login(loginInfo)
       
-      if (loginResponse.status === 200) {
+      if (loginResponse.status === 200 ) {
         setItem("token", loginResponse.data.token)
-        if(loginResponse.data.role =="1"){
+        console.log(loginResponse.data,"role")
+        if(loginResponse.data.role == 1){
           navigate("/dashboard")
         }
-        navigate("/customer-dashboard")
+        else{
+          navigate("/customer-dashboard")
+
+        }
+        
       }
-      // if (loginInfo.email === "admin" && loginInfo.password === "admin") {
-      //   setItem("token", "admin")
-      //   navigate("/dashboard")
-      // }
       
   }
     catch(e){
