@@ -18,3 +18,9 @@
   background-color: #f2f2f2;
   font-weight: bold;
 }
+#category-table th, #category-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+
+}

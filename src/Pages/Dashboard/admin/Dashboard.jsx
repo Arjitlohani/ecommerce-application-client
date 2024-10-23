@@ -58,7 +58,7 @@ const Dashboard = () => {
           </div>
           <h3 className="block sm:hidden text-amber-400">Users Information</h3>
           <ProductTable />
-          <h1 className="text-red-500">hello world</h1>
+          
         </div>
         <Footer />
       </div>

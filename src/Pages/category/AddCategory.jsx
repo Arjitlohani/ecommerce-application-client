@@ -1,11 +1,19 @@
-import React from 'react'
+
+
+
+import CategoryTable from "../../Components/common/table/CategoryTable";
+
 
 const AddCategory = () => {
+  
+ 
   return (
-    <div>
-      I want to add a category
-    </div>
-  )
+    <>
+      <CategoryTable/>
+    </>
+    
+  );
+
 }
 
 export default AddCategory
