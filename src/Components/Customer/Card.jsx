@@ -1,8 +1,8 @@
 // components/Card.jsx
-import { useState } from 'react';
 
-const Card = ({ image, productName, description, price }) => {
-  const [quantity, setQuantity] = useState(1);
+
+const Card = ({ image, productName, description, price,quantity }) => {
+  // const [quantity, setQuantity] = useState(1);
 
   return (
     <div className="bg-white shadow-md p-4 rounded-md">
@@ -12,13 +12,15 @@ const Card = ({ image, productName, description, price }) => {
       <p className="text-lg font-bold mt-2">{price}</p>
       <div className="flex items-center mt-4">
         <label className="mr-2">Qty:</label>
-        <input
+        {/* <input
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           min="1"
           className="w-12 border border-gray-300 p-1"
-        />
+        /> */}
+        <label className="mr-2" >{quantity}</label>
+
       </div>
       <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition">
         Add to Cart

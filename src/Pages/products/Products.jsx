@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../../Components/partials/Navbar"
+import ProductTable from "../../Components/common/table/Tables";
 
 
 const Products = () => {
@@ -13,6 +14,7 @@ const Products = () => {
 
 
 <Navbar toggleSidebar={toggleSidebar} />
+
 <div className="flex items-center justify-center h-screen ">
   <form className="w-full max-w-lg bg-slate-300 mb-[80px] rounded p-2">
     <div className="form-row gap-3">
@@ -40,6 +42,9 @@ const Products = () => {
     </div>
     <button type="submit" className="btn btn-primary m-3">Add Product</button>
   </form>
+</div>
+<div>
+  <ProductTable/>
 </div>
 
 
