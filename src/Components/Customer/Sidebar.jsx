@@ -2,7 +2,7 @@
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
-    <aside className={`rounded fixed top-0 left-0 w-64 bg-purple-500 h-full z-50 transform ${isOpen ?
+    <aside className={`rounded fixed top-0 left-0 w-64 bg-blue-500 h-full z-50 transform ${isOpen ?
      'translate-x-0' : '-translate-x-full'} transition-transform duration-300`}>
       <div className="text-white p-4">
         <button onClick={toggleSidebar} className="mb-4">Close X</button>

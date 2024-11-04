@@ -57,7 +57,7 @@ const Dashboard = () => {
             </div>
           </div>
           <h3 className="block sm:hidden text-amber-400">Users Information</h3>
-          <ProductTable />
+          <ProductTable/>
           
         </div>
         <Footer />

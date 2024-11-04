@@ -2,23 +2,23 @@ import  { useEffect, useState } from 'react';
 import './table.css';
 import { axiosInstance } from '../../../utils/config/apiConfig';
 
-const ProductTable = () => {
-  const [products, setProducts] = useState([]);
+const OrderTable = () => {
+  const [orders, setOrders] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axiosInstance.get('/product', {
+        const response = await axiosInstance.get('/order/getAll', {
           headers: {
             'Cache-Control': 'no-cache', 
           },
         });
         
         // Check the response structure and set products from allProduct
-        console.log('Response data:', response.data);
-        if (response.data.success) {
-          setProducts(response.data.allProduct);
+        console.log('Response data:', response.allOrder);
+        if (response.success) {
+            setOrders(response.data.allProduct);
         } else {
           setError('Failed to fetch products.');
         }
@@ -31,7 +31,7 @@ const ProductTable = () => {
     fetchProducts();
   }, []);
 
-  console.log('Products in state:', products); // Debugging line
+  console.log('Products in state:', orders); // Debugging line
 
   return (
     <div className="product-table-container">
@@ -47,11 +47,11 @@ const ProductTable = () => {
           </tr>
         </thead>
         <tbody>
-          {products.length > 0 ? (
-            products.map((product) => (
-              <tr key={product._id}> {/* Use the unique _id for key */}
-                <td>{product.name}</td>
-                <td>${product.price}</td>
+          {orders.length > 0 ? (
+            orders.map((product) => (
+              <tr key={orders._id}> {/* Use the unique _id for key */}
+                <td>{orders.name}</td>
+                <td>${orders.price}</td>
                 {/* If you have a quantity field, you can display it here */}
                 <td>{product.quantity}</td>
               </tr>
@@ -67,4 +67,4 @@ const ProductTable = () => {
   );
 };
 
-export default ProductTable;
+export default OrderTable;

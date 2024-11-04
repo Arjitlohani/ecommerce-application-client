@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <h2>Admin Panel</h2>
-      <ul>
+      <ul className="visible">
         <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/addcategory">Add Category</Link></li>
         <li><Link to="/addproduct">Add Product</Link></li>
