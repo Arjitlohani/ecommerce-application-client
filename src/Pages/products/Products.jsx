@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Navbar from "../../Components/partials/Navbar"
 import ProductTable from "../../Components/common/table/Tables";
+import Footer from "../../Components/partials/Footer";
+import Sidebar from "../../Components/partials/SideBar";
 
 
 const Products = () => {
@@ -13,9 +15,16 @@ const Products = () => {
     <>
 
 
-<Navbar toggleSidebar={toggleSidebar} />
+<div className="dashboard-layout">
+      {isSidebarVisible && <Sidebar />}
+      <div className="main-content">
+        <Navbar toggleSidebar={toggleSidebar} />
+        <div className="content">
+        <h1 className=" items-center justify-center">Add Product</h1>
+
 
 <div className="flex items-center justify-center h-screen ">
+
   <form className="w-full max-w-lg bg-slate-300 mb-[80px] rounded p-2">
     <div className="form-row gap-3">
       <div className=" flex flex-col form-group col-md-6 gap-3">
@@ -46,12 +55,17 @@ const Products = () => {
 <div>
   <ProductTable/>
 </div>
+</div>
+<Footer/>
+</div>
+</div>
 
 
 
     
 
 
+    
     </>
   )
 }

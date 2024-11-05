@@ -3,6 +3,7 @@ import CategoryTable from "../../Components/common/table/CategoryTable";
 import { axiosInstance } from "../../utils/config/apiConfig";
 import Sidebar from "../../Components/partials/SideBar";
 import Navbar from "../../Components/partials/Navbar";
+import Footer from "../../Components/partials/Footer";
 
 const AddCategory = () => {
     const [newCategoryName, setNewCategoryName] = useState('');
@@ -32,11 +33,10 @@ const AddCategory = () => {
     return (
         <>
             <div className="dashboard-layout">
-                <div style={{color:"white"}} className={`sidebar ${isSidebarVisible ? 'visible' : ''}`}>
-                    <Sidebar />
-                </div>
-                <div className={`main-content ${isSidebarVisible ? 'sidebar-expanded' : 'sidebar-collapsed'}`}>
-                    <Navbar toggleSidebar={toggleSidebar} />
+      {isSidebarVisible && <Sidebar />}
+      <div className="main-content">
+        <Navbar toggleSidebar={toggleSidebar} />
+        <div className="content">
                     <div className="m-4 flex flex-col gap-2">
                         <label><h1>Add Category</h1></label>
                         <input 
@@ -50,6 +50,8 @@ const AddCategory = () => {
                         {error && <p className="error">{error}</p>}
                     </div>
                     <CategoryTable />
+                </div>
+                <Footer/>
                 </div>
             </div>
         </>
