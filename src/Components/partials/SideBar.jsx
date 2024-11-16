@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar bg-blue-950">
       <h2>Admin Panel</h2>
       <ul >
         <li><Link to="/dashboard">Dashboard</Link></li>

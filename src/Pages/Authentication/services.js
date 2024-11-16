@@ -16,10 +16,12 @@ export const login = async (loginInfo) => {
   }
 };
 
-export const register = async (registerInfo) => {
+
+
+export const register = async (formData) => {
   try {
     
-    const response = await axiosInstance.post('auth/register', registerInfo);
+    const response = await axiosInstance.post('auth/register', formData);
     return response;
   } catch (error) {
     console.error("Registration error: ", error);

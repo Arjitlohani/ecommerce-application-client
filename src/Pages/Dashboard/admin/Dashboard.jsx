@@ -18,45 +18,59 @@ const Dashboard = () => {
       <div className="main-content">
         <Navbar toggleSidebar={toggleSidebar} />
         <div className="content">
-          <div className="cards-container">
-            <div
-              className="card"
-              style={{ backgroundImage: "url('images/3333.png')" }}
-            >
-              <Link to={"/addproduct"}>
-                <h3>Product</h3>
-                <p className="hidden sm:block">Manage your products.</p>
-              </Link>
-            </div>
+          
+          
 
-            <div
-              className="card"
-              style={{
-                backgroundImage: "url('images/111.png')",
-                backgroundSize: "cover",
-              }}
-            >
-              <Link to={"/adduser"}>
-                <h3>User</h3>
-                <p className="hidden sm:block text-red-600">
-                  Manage users and their roles.
-                </p>
-              </Link>
-            </div>
+    
 
-            <div
-              className="card"
-              style={{ backgroundImage: "url('images/122.png')" }}
-            >
-              <Link to={"/addorder"}>
-                <h3>Order</h3>
-                <p className="hidden sm:block text-amber-400">
-                  Track orders and payments.
-                </p>
-              </Link>
+        
+          
+          <main className="flex-grow">
+        <div className="container mx-auto p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          
+          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all">
+            <div className="flex items-center justify-center text-blue-600 text-4xl mb-4">
+              <i className="fas fa-cogs"></i>
             </div>
+            <h2 className="text-xl font-semibold text-center mb-2">Products</h2>
+            <p className="text-center mb-4">Add products to our collection.</p>
+            <Link
+              to="/addproduct"
+              className="block bg-blue-600 text-white text-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-all"
+            >
+              Shop Now
+            </Link>
           </div>
-          <h3 className="block sm:hidden text-amber-400">Users Information</h3>
+          
+          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all">
+            <div className="flex items-center justify-center text-green-600 text-4xl mb-4">
+              <i className="fas fa-th-large"></i>
+            </div>
+            <h2 className="text-xl font-semibold text-center mb-2">Categories</h2>
+            <p className="text-center mb-4">Explore various categories of products .</p>
+            <Link
+              to="/addcategory"
+              className="block bg-green-600 text-white text-center py-2 px-4 rounded-lg hover:bg-green-700 transition-all"
+            >
+              View Categories
+            </Link>
+          </div>
+      
+          <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all">
+            <div className="flex items-center justify-center text-yellow-600 text-4xl mb-4">
+              <i className="fas fa-box"></i>
+            </div>
+            <h2 className="text-xl font-semibold text-center mb-2">Orders</h2>
+            <p className="text-center mb-4">Manage orders with ease.</p>
+            <Link
+              to="/addorder"
+              className="block bg-yellow-600 text-white text-center py-2 px-4 rounded-lg hover:bg-yellow-700 transition-all"
+            >
+              Manage Orders
+            </Link>
+          </div>
+        </div>
+      </main>
           <ProductTable/>
           
         </div>

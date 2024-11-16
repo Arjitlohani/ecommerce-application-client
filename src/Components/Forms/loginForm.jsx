@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Footer from "../partials/Footer"
 
 
@@ -8,9 +9,7 @@ const LoginForm = ({loginInfo,setLoginInfo,handleSubmit}) => {
 }
   return (
     <>
-    <style>
-      
-    </style>
+   
     <div className="flex h-screen justify-center items-center">
    
     <form id="form">
@@ -29,17 +28,21 @@ const LoginForm = ({loginInfo,setLoginInfo,handleSubmit}) => {
   
 
 
-  <div className="row mb-4">
+  <div className="row mb-4 ">
+
     
 
-    <div className="col">
-      {/* <!-- Simple link --> */}
-      <a href="#!">Forgot password?</a>
+    <div className=" ">
+     
+      <a href="#!">Forgot password?</a><br></br>
+      <Link to={"/signup"} ><button  type="submit" className=" text-blue-600 " ><u>Sign up</u></button></Link>
     </div>
+    
   </div>
 
-  {/* <!-- Submit button --> */}
   <button data-mdb-ripple-init type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Sign in</button>
+
+  
 </form>
 </div>
 
