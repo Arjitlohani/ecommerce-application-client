@@ -11,7 +11,7 @@ import { FaSearch } from "react-icons/fa";
 const Navbar = ({ toggleSidebar }) => {
   return (
 
-    <nav className="bg-blue-600 p-4 text-white flex justify-between">
+    <nav className="bg-blue-900 p-4 text-white flex justify-between">
       <button onClick={toggleSidebar} className="text-2xl">
         ☰
       </button>

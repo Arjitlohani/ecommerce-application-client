@@ -35,6 +35,7 @@ const ProductTable = () => {
 
   return (
     <div className="product-table-container">
+    
       <h2>Product List</h2>
       {error && <p className="error">{error}</p>}
       <table className="product-table">
