@@ -53,7 +53,15 @@ const CategoryTable = ({ refreshTrigger }) => {
                             <tr key={category._id}>
                                 <td>{index + 1}</td>
                                 <td>{category.name}</td>
-                                <td>Edit</td>
+                                <td className="flex-1">
+                                <button className=" mr-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-green-500 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                Edit
+                                </button>
+                                <button className="bg-transparent hover:bg-red-500 text-red-700 font-semibold
+                                 hover:text-red-800 py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                                Delete
+                                </button>
+                                </td>
                             </tr>
                         ))
                     ) : (
