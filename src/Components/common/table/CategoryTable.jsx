@@ -23,6 +23,21 @@ const CategoryTable = ({ refreshTrigger }) => {
         }
     };
 
+    const handleCategoryDelete = async (id) => {
+        try {
+            const response = await axiosInstance.delete(`/category/${id}`);
+            if (response.data.success) {
+                setCategories((prev) => prev.filter((category) => category._id !== id));
+            } else {
+                setError("Failed to delete category.");
+            }
+        } catch (error) {
+            console.error("Error deleting category:", error);
+            setError("Failed to delete category.");
+        }
+
+    }
+
     useEffect(() => {
         fetchCategories(true); 
     }, [refreshTrigger]);
@@ -57,10 +72,13 @@ const CategoryTable = ({ refreshTrigger }) => {
                                 <button className=" mr-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-green-500 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                                 Edit
                                 </button>
-                                <button className="bg-transparent hover:bg-red-500 text-red-700 font-semibold
-                                 hover:text-red-800 py-2 px-4 border border-red-500 hover:border-transparent rounded">
-                                Delete
-                                </button>
+                                <button
+    className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-red-800 py-2 px-4 border border-red-500 hover:border-transparent rounded"
+    onClick={() => handleCategoryDelete(category._id)}
+>
+    Delete
+</button>
+
                                 </td>
                             </tr>
                         ))
