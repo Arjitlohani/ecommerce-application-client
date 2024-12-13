@@ -34,7 +34,7 @@ const LoginForm = ({loginInfo,setLoginInfo,handleSubmit}) => {
 
     <div className=" ">
      
-      <a href="#!">Forgot password?</a><br></br>
+      <a href="/forgot-password">Forgot password?</a><br></br>
       <Link to={"/signup"} ><button  type="submit" className=" text-blue-600 " ><u>Sign up</u></button></Link>
     </div>
     

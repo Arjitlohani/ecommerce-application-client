@@ -9,6 +9,7 @@ import Products from './products/Products'
 import CustomerDashboard from './Customer/CustomerDashboard'
 import Cart from './addToCart/Cart'
 import Signup from './SignUp/Signup'
+import ForgetPassword from '../Components/Forms/ForgetPassword'
 
 
 const MainRoutes = () => {
@@ -23,6 +24,7 @@ const MainRoutes = () => {
         <Route path='/addorder' element={<Orders/>} />
         <Route path='/addproduct' element={<Products/>} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/forgot-password" element={<ForgetPassword />} />
     </Routes>
 
   )
